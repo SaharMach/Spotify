@@ -1,0 +1,11 @@
+.sidebar {
+    grid-area: sidebar;
+    width: 325px;
+    background-color: #fff;
+    display: grid;
+    gap: 6px;
+    grid-template-rows: 160px 1fr;
+    grid-template-areas:
+    "sb-control"
+    "sb-lib";
+}

@@ -1,0 +1,16 @@
+.main-view {
+    background-color: #000;
+    display: grid;
+    gap: 10px;
+    grid-template-areas:
+        "sidebar dynamic-con"
+        "footer footer ";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr auto;
+    height: 100vh;
+    min-height: 100%;
+    padding: 6px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
