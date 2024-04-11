@@ -1,4 +1,89 @@
 .sidebar-lib {
     grid-area: sb-lib;
-    background-color: #2d7cb1;
+    color: white;
+    background-color: #121212;
+    position: relative;
+    .lib-header {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        justify-content: space-between;
+        article {
+            gap: 15px;
+            display: flex;
+            align-items: center;
+           
+        }
+        svg {
+            height: 24px;
+            width: 24px;
+            filter: invert(1);
+        }
+    }
+
+    .sidebar-lib-cards {
+        display: flex;
+        flex-direction: column;
+        padding: 0 8px 8px;
+        gap: 8px;
+    }
+
+    .sidebar-lib-card {
+   
+        background: #1f1f1f;
+        border-radius: 8px;
+       
+        margin: 8px 0;
+        article {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        p {
+            font-size: 13px;
+        }
+        padding: 16px 20px;
+        &-title {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        button {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            position: relative;
+            background-color: #ffffff;
+            color:black;
+            display: flex;
+            border-radius: 9999px;
+            font-size: inherit;
+            min-block-size: 32px;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            justify-content: center;
+            padding-block-start: 4px;
+            padding-block-end: 4px;
+            padding-inline-start: 16px;
+            padding-inline-end: 16px;
+            font-weight: 700;
+            font-size: 12px;
+            max-width: max-content;
+        }
+    }
+
+    .sidebar-lib-footer {
+ 
+        position: absolute;
+        bottom: 0;
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 12px;
+            padding: 10px;
+        }
+        a {
+            color: #cfcfcf;
+        }
+    }
 }

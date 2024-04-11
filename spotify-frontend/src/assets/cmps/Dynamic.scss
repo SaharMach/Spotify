@@ -8,13 +8,14 @@
     ;
     background:green;
     overflow: hidden;
+    background-color: #121212;
 }
 
 .dyn-home {
     grid-area: dynamic;
-    background-color: #b90909;
+    // background-color: #b90909;
     height: 100%;
-   
+    color: white;
     // overflow: hidden;
     // overflow-y: scroll;
 }

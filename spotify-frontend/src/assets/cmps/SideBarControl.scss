@@ -1,6 +1,19 @@
 .sidebar-control {
+    background-color: #121212;
     grid-area: sb-control;
     display: flex;
     flex-direction: column;
-    background-color: #c93838;
+    padding: 8px 12px;
+    color: white;
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+        li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    }
 }
