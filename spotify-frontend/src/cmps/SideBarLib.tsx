@@ -38,8 +38,8 @@ export function SideBarLib() {
         </div>
         <section className="sidebar-lib-footer">
             <section>
-                {footerLinks.map((link) => {
-                    return <a href="">{link}</a>
+                {footerLinks.map((link, idx) => {
+                    return <a key={idx} href="">{link}</a>
                 })}
                      </section>
                 {/* <button className="clean-btn">English</button> */}

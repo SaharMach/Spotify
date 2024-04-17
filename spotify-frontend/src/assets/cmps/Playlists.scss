@@ -1,0 +1,41 @@
+.playlist-con {
+    .playlist-cards {
+        display: flex;
+        flex-flow: row wrap;
+        padding-left: 20px;
+        padding-right: 20px;
+        .playlist-card {
+            padding: 10px;
+            height: 250px;
+            width: 160px;
+            display: flex;
+            flex-direction: column;
+          
+            img {
+                border-radius: 10px;
+                width: 100%;
+                height: 60%;
+            }
+            .playlist-desc {
+                height: 40%;
+                overflow: hidden;
+                
+                p {
+                    font-size: 14px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+                span {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-size: 14px;
+                    color: gray;
+                }
+            }
+        }
+    }
+}

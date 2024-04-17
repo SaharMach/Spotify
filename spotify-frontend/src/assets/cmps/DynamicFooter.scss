@@ -1,0 +1,58 @@
+.dyn-footer {
+
+    margin-left: 32px;
+    margin-right: 32px;
+    margin-bottom: 96px;
+
+    &-links {
+        justify-content: space-between;
+        display: flex;
+        gap: 50px;
+        margin-bottom: 32px;
+        ul {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            a {
+                color: gray;
+                cursor: pointer;
+
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+
+        .dyn-footer-icons {
+            display: flex;
+            gap: 20px;
+                span {
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 50%;
+                    display: inline-flex;
+                    -webkit-box-pack: center;
+                    justify-content: center;
+                    -webkit-box-align: center;
+                    align-items: center;
+                    background-color: rgb(41, 41, 41);
+                    svg {
+                        height: 17px;
+                        width: 17px;
+                        filter: invert(1);
+                    }
+                }
+        }
+    }
+    hr {
+        height: 0.1px;
+        border-color: rgb(130, 130, 130);
+        margin-bottom: 32px;
+    }
+    .rights {
+        color: gray;
+        font-size: 14px;
+    }
+}
+
