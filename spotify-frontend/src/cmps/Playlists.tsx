@@ -1,5 +1,7 @@
 import{ useEffect, useState } from 'react';
 import axios from 'axios';
+import { Artists } from './Artists';
+
 
 interface PlaylistItem {
     id: {
@@ -23,6 +25,9 @@ interface SearchResponse {
 export function Playlists() {
     const [playlists, setPlaylists] = useState<PlaylistItem[]>([]);
     const play = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>
+    const [chosenPlaylist, setChosenPlaylist] = useState<PlaylistItem>()
+
+    
     useEffect(() => {
         const fetchPlaylists = async () => {
             try {
@@ -43,16 +48,15 @@ export function Playlists() {
 
         fetchPlaylists();
     }, []);
-    console.log(playlists);
     
     return (
         <div className='playlist-con'>
-            
+            <Artists />
             <h1>Spotify playlist</h1>
             <section className='playlist-cards'>
 
-            {playlists.map((playlist, index) => (
-                <div className='playlist-card' key={index}>
+            {!chosenPlaylist && playlists.map((playlist, index) => (
+                 <div onClick={() => setChosenPlaylist(playlist)} className='playlist-card' key={index}>
                     <div className='card-layout'>
                         <span>
                             {play}
