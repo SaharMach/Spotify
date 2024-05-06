@@ -1,26 +1,7 @@
 import{ useEffect, useState } from 'react';
-import axios from 'axios';
-import { Artists } from './Artists';
-
-
-interface PlaylistItem {
-    id: {
-        playlistId: string;
-    },
-    snippet: {
-        title: string;
-        description: string;
-        thumbnails: {
-            medium: {
-                url: string;
-            };
-        };
-    };
-}
-
-interface SearchResponse {
-    items: PlaylistItem[];
-}
+import { PlaylistItem } from '../types';
+// import { SearchResponse } from '../types';
+import { youtubeService } from '../services/youtube.service';
 
 export function Playlists() {
     const [playlists, setPlaylists] = useState<PlaylistItem[]>([]);
@@ -31,16 +12,8 @@ export function Playlists() {
     useEffect(() => {
         const fetchPlaylists = async () => {
             try {
-                const response = await axios.get<SearchResponse>('https://www.googleapis.com/youtube/v3/search', {
-                    params: {
-                        part: 'snippet',
-                        maxResults: 10,
-                        q: 'top playlists in Israel', 
-                        type: 'playlist', 
-                        key: '' 
-                    }
-                });
-                setPlaylists(response.data.items);
+                const response = await youtubeService.fetchDataFromAPI('playlists', 'top playlists in israel')
+                setPlaylists(response);
             } catch (error) {
                 console.error('Error fetching playlists:', error);
             }
@@ -51,7 +24,7 @@ export function Playlists() {
     
     return (
         <div className='playlist-con'>
-            <Artists />
+            
             <h1>Spotify playlist</h1>
             <section className='playlist-cards'>
 
