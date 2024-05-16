@@ -1,13 +1,45 @@
 .song-list {
     display: flex;
     flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+    font-size: 13px;
+    
 
+    h1 {
+        margin-left: 20px;
+    }
     .song-item {
-        display: flex;
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: 1fr 1fr 1fr ;
+        margin-left: 20px;
+        section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            img {
+                display: flex;
+                
+                width: 50px;
+                height: 50px;
+            }
+        }
 
-        img {
-            width: 50px;
-            height: 50px;
+        .song-date {
+            display: flex;
+            align-self: center;
+            justify-content: center;
+        }
+        .song-duration {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &:hover {
+            background-color: #83838328;
+            cursor: pointer;
         }
     }
 }

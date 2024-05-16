@@ -41,14 +41,15 @@ export function SongList({ songs }: SongListProps) {
 
     return (
         <div className="song-list">
+            <h1>Poplur</h1>
             {detailedSongs.map((song, index) => (
                 <div key={index} className="song-item">
-                    <img src={song.snippet.thumbnails.medium.url} alt={song.snippet.title} className="song-thumbnail" />
-                    <div className="song-info">
+                    <section>
+                        <img src={song.snippet.thumbnails.medium.url} alt={song.snippet.title} className="song-thumbnail" />
                         <div className="song-title">{song.snippet.title}</div>
-                        <div className="song-date">{new Date(song.snippet.publishedAt).toLocaleDateString()}</div>
-                        <div className="song-duration">{song.duration}</div>
-                    </div>
+                    </section>
+                    <div className="song-date">{new Date(song.snippet.publishedAt).toLocaleDateString()}</div>
+                    <div className="song-duration">{song.duration ? song.duration : ''}</div>
                 </div>
             ))}
         </div>
